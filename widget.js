@@ -211,6 +211,17 @@ function getSectionText($heading) {
   });
 }
 
+const prompts = {
+  en: "Summarize the following section in less than 50 words:  \n",
+  cn: "用50个字以内的话总结以下内容: \n",
+};
+const lang = navigator.language ?? navigator.userLanguage;
+let prompt = prompts[en];
+
+if (lang.startsWith("zh")) {
+  prompt = prompts[cn];
+}
+
 function summarizeSection(section, updateSummary, sectionHeadingFromDOM) {
   return new Promise(function (resolve, reject) {
     const openAiKey = getOpenAiKey();
@@ -242,8 +253,7 @@ function summarizeSection(section, updateSummary, sectionHeadingFromDOM) {
     } else {
       const sectionContent =
         "## " + section.title + "\n\n" + section.contentPlain;
-      const fixedPromptForChatGPT =
-        "Summarize the following section in less than 50 words:  ";
+      const fixedPromptForChatGPT = prompt;
       fetchSummaryUsingOpenAi(
         fixedPromptForChatGPT,
         openAiKey,
