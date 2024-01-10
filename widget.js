@@ -212,8 +212,8 @@ function getSectionText($heading) {
 }
 
 const prompts = {
-  en: "Summarize the following section in less than 50 words:  \n",
-  cn: "用50个字以内的话总结以下内容: \n",
+  en: "Summarize the following section in less than 50 words, using English:  \n",
+  cn: "用50个字以内的话总结以下内容，使用中文回复我。: \n",
 };
 const lang = navigator.language ?? navigator.userLanguage;
 let p = prompts.en;
