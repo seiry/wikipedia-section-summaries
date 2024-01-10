@@ -17,22 +17,31 @@ To install the Mediawiki Summarizer tool, follow the instructions below:
 
 ```javascript
 mw.loader
-    .using(["oojs-ui-core", "oojs-ui.styles.icons-content"])
-    .done(function () {
-        var version = Date.now();
-        $.when(
-          mw.loader.getScript('https://tonythomas01.github.io/wikipedia-section-summaries/sectionFinder.js', 'text/javascript'),
-          mw.loader.getScript('https://tonythomas01.github.io/wikipedia-section-summaries/widget.js', 'text/javascript'),
-          mw.loader.load("https://tonythomas01.github.io/wikipedia-section-summaries/widget.css", "text/css")
-        ).then(
-            function () {
-                initializeSectionSummarizer();
-            },
-            function (e) {
-                mw.log.error(e.message);
-            }
-        );
-    });
+  .using(["oojs-ui-core", "oojs-ui.styles.icons-content"])
+  .done(function () {
+    var version = Date.now();
+    $.when(
+      mw.loader.getScript(
+        "https://seiry.github.io/wikipedia-section-summaries/sectionFinder.js",
+        "text/javascript"
+      ),
+      mw.loader.getScript(
+        "https://seiry.github.io/wikipedia-section-summaries/widget.js",
+        "text/javascript"
+      ),
+      mw.loader.load(
+        "https://seiry.github.io/wikipedia-section-summaries/widget.css",
+        "text/css"
+      )
+    ).then(
+      function () {
+        initializeSectionSummarizer();
+      },
+      function (e) {
+        mw.log.error(e.message);
+      }
+    );
+  });
 ```
 
 5. Click "Save page" to save your changes.
