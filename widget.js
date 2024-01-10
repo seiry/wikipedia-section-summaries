@@ -216,10 +216,10 @@ const prompts = {
   cn: "用50个字以内的话总结以下内容: \n",
 };
 const lang = navigator.language ?? navigator.userLanguage;
-let p = prompts[en];
+let p = prompts.en;
 
 if (lang.startsWith("zh")) {
-  p = prompts[cn];
+  p = prompts.cn;
 }
 
 function summarizeSection(section, updateSummary, sectionHeadingFromDOM) {
