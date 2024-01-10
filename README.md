@@ -1,6 +1,6 @@
 # Wikipedia Section Summarizer
 
-This repository contains a small tool that when added to your `common.js` file on Wikipedia or any other Medaiwiki site, will provide you an interface to generate summary of article sections.
+This repository contains a small tool that when added to your `global.js` file on Wikipedia or any other Medaiwiki site, will provide you an interface to generate summary of article sections.
 
 ![ezgif com-video-to-gif (1)](https://github.com/tonythomas01/wikipedia-section-summaries/assets/4214481/f578db18-b628-4490-b4e9-a7c226854a79)
 
@@ -11,9 +11,13 @@ Demo video: https://www.youtube.com/watch?v=mja1C6FnWes
 To install the Mediawiki Summarizer tool, follow the instructions below:
 
 1. Access your user page on Wikipedia or any other Wikimedia site by clicking on your username at the top right of the webpage.
-2. Navigate to your common.js page, which you can find as a subpage of your user page, such as [User:YourUsername/common.js](https://www.wikipedia.org/wiki/User:YourUsername/common.js)
-3. Click "Edit" at the top right of the common.js page.
-4. Copy and paste the following code snippet into the text editor on the common.js page:
+2. Navigate to your global.js page, which you can find as a subpage of your user page, such as [User:YourUsername/global.js](https://meta.wikimedia.org/wiki/User:YourUsername/global.js)
+3. Click "Edit" at the top right of the global.js page.
+4. Copy and paste the following code snippet into the text editor on the global.js page:
+
+also, you can access this file via preference - `Custom JavaScript`
+
+![](./preference.png)
 
 ```javascript
 mw.loader
